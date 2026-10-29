@@ -56,6 +56,10 @@ Amarelo `#F2B705` aparece pontualmente nos elementos de UI; usar com parcimônia
   - Corpo: Outfit Regular/Light, destaques em SemiBold.
 - **Display condensado em caixa alta: Kassi (Classic)** nas headlines de impacto (anúncios e posts gráficos), sempre em caixa alta, entrelinha apertada (~0,9).
   - ⚠️ A fonte Kassi **não está instalada no ambiente do Claude**; fica indisponível para escrita via API. Fallback usado: **Bebas Neue**. Trocar para Kassi manualmente no Figma quando for headline condensada.
+- **Altura de linha (regra fixa no Figma): sempre em PORCENTAGEM, nunca em pixels.**
+  - Títulos: **110% a 120%** (padrão 115%; números grandes 110%).
+  - Blocos de texto e subtítulos (corpo, legendas, fontes, rótulos): **130% a 150%** (padrão 140%).
+  - Ao criar texto via API: `lineHeight = { value: 115, unit: 'PERCENT' }`. Nunca usar `unit: 'PIXELS'`.
 - Tags pequenas e botões: Outfit Medium/SemiBold em **caixa alta** com tracking aberto (ex.: "E-COMMERCE DE MODA", "SOLICITE UMA DEMONSTRAÇÃO").
 
 ## 5. Logo

@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1999" height="786" viewBox="0 0 1999 786">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#010a3c"/><stop offset="0.55" stop-color="#021060"/><stop offset="0.8" stop-color="#0230c8"/><stop offset="1" stop-color="#0a5cf0"/></linearGradient>
+<radialGradient id="spot" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#1a4bff" stop-opacity="0.95"/><stop offset="1" stop-color="#1a4bff" stop-opacity="0"/></radialGradient>
+<radialGradient id="glow" cx="0.5" cy="1" r="0.6"><stop offset="0" stop-color="#1e7bff" stop-opacity="0.8"/><stop offset="1" stop-color="#1e7bff" stop-opacity="0"/></radialGradient>
+<radialGradient id="dark" cx="0.5" cy="0.35" r="0.6"><stop offset="0" stop-color="#000626" stop-opacity="0.7"/><stop offset="1" stop-color="#000626" stop-opacity="0"/></radialGradient>
+<linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0230c0"/><stop offset="1" stop-color="#0a5ef5"/></linearGradient>
+</defs>
+<rect id="Fundo" width="1999" height="786" fill="url(#bg)"/>
+<rect id="Escurecimento" width="1999" height="786" fill="url(#dark)"/>
+<g id="Luzes">
+<ellipse cx="245" cy="0" rx="150.0" ry="120" fill="url(#spot)"/>
+<ellipse cx="520" cy="0" rx="130.0" ry="90" fill="url(#spot)"/>
+<ellipse cx="840" cy="0" rx="160.0" ry="150" fill="url(#spot)"/>
+<ellipse cx="1130" cy="0" rx="130.0" ry="80" fill="url(#spot)"/>
+<ellipse cx="1400" cy="0" rx="150.0" ry="130" fill="url(#spot)"/>
+<ellipse cx="1780" cy="0" rx="150.0" ry="140" fill="url(#spot)"/>
+</g>
+<g id="Grade-parede" stroke="#2a5bff" stroke-opacity="0.45" stroke-width="1.5">
+<line x1="-33" y1="0" x2="-33" y2="625"/>
+<line x1="67" y1="0" x2="67" y2="625"/>
+<line x1="167" y1="0" x2="167" y2="625"/>
+<line x1="267" y1="0" x2="267" y2="625"/>
+<line x1="367" y1="0" x2="367" y2="625"/>
+<line x1="467" y1="0" x2="467" y2="625"/>
+<line x1="567" y1="0" x2="567" y2="625"/>
+<line x1="667" y1="0" x2="667" y2="625"/>
+<line x1="767" y1="0" x2="767" y2="625"/>
+<line x1="867" y1="0" x2="867" y2="625"/>
+<line x1="967" y1="0" x2="967" y2="625"/>
+<line x1="1067" y1="0" x2="1067" y2="625"/>
+<line x1="1167" y1="0" x2="1167" y2="625"/>
+<line x1="1267" y1="0" x2="1267" y2="625"/>
+<line x1="1367" y1="0" x2="1367" y2="625"/>
+<line x1="1467" y1="0" x2="1467" y2="625"/>
+<line x1="1567" y1="0" x2="1567" y2="625"/>
+<line x1="1667" y1="0" x2="1667" y2="625"/>
+<line x1="1767" y1="0" x2="1767" y2="625"/>
+<line x1="1867" y1="0" x2="1867" y2="625"/>
+<line x1="1967" y1="0" x2="1967" y2="625"/>
+<line x1="0" y1="65" x2="1999" y2="65"/>
+<line x1="0" y1="160" x2="1999" y2="160"/>
+<line x1="0" y1="245" x2="1999" y2="245"/>
+<line x1="0" y1="328" x2="1999" y2="328"/>
+<line x1="0" y1="410" x2="1999" y2="410"/>
+<line x1="0" y1="490" x2="1999" y2="490"/>
+<line x1="0" y1="568" x2="1999" y2="568"/>
+<line x1="0" y1="625" x2="1999" y2="625"/>
+</g>
+<rect id="Piso" y="625" width="1999" height="161" fill="url(#floor)"/>
+<g id="Grade-piso" stroke="#3fb4ff" stroke-opacity="0.85" stroke-width="1.6">
+<line x1="-503.1" y1="625" x2="-652" y2="786"/>
+<line x1="-395.7" y1="625" x2="-534" y2="786"/>
+<line x1="-288.4" y1="625" x2="-416" y2="786"/>
+<line x1="-181.0" y1="625" x2="-298" y2="786"/>
+<line x1="-73.6" y1="625" x2="-180" y2="786"/>
+<line x1="33.7" y1="625" x2="-62" y2="786"/>
+<line x1="141.1" y1="625" x2="56" y2="786"/>
+<line x1="248.5" y1="625" x2="174" y2="786"/>
+<line x1="355.8" y1="625" x2="292" y2="786"/>
+<line x1="463.2" y1="625" x2="410" y2="786"/>
+<line x1="570.5" y1="625" x2="528" y2="786"/>
+<line x1="677.9" y1="625" x2="646" y2="786"/>
+<line x1="785.3" y1="625" x2="764" y2="786"/>
+<line x1="892.6" y1="625" x2="882" y2="786"/>
+<line x1="1000.0" y1="625" x2="1000" y2="786"/>
+<line x1="1107.4" y1="625" x2="1118" y2="786"/>
+<line x1="1214.7" y1="625" x2="1236" y2="786"/>
+<line x1="1322.1" y1="625" x2="1354" y2="786"/>
+<line x1="1429.5" y1="625" x2="1472" y2="786"/>
+<line x1="1536.8" y1="625" x2="1590" y2="786"/>
+<line x1="1644.2" y1="625" x2="1708" y2="786"/>
+<line x1="1751.5" y1="625" x2="1826" y2="786"/>
+<line x1="1858.9" y1="625" x2="1944" y2="786"/>
+<line x1="1966.3" y1="625" x2="2062" y2="786"/>
+<line x1="2073.6" y1="625" x2="2180" y2="786"/>
+<line x1="2181.0" y1="625" x2="2298" y2="786"/>
+<line x1="2288.4" y1="625" x2="2416" y2="786"/>
+<line x1="2395.7" y1="625" x2="2534" y2="786"/>
+<line x1="2503.1" y1="625" x2="2652" y2="786"/>
+<line x1="0" y1="625.0" x2="1999" y2="625.0"/>
+<line x1="0" y1="643.0" x2="1999" y2="643.0"/>
+<line x1="0" y1="666.0" x2="1999" y2="666.0"/>
+<line x1="0" y1="695.5" x2="1999" y2="695.5"/>
+<line x1="0" y1="733.3" x2="1999" y2="733.3"/>
+<line x1="0" y1="781.6" x2="1999" y2="781.6"/>
+<line x1="0" y1="843.4" x2="1999" y2="843.4"/>
+<line x1="0" y1="922.6" x2="1999" y2="922.6"/>
+<line x1="0" y1="1023.9" x2="1999" y2="1023.9"/>
+</g>
+<rect id="Brilho-piso" y="560" width="1999" height="226" fill="url(#glow)" opacity="0.7"/>
+<g id="Pixels-topo-esquerda">
+<rect x="28" y="24" width="40" height="40" fill="#1f3fd0" fill-opacity="0.5"/>
+<rect x="68" y="24" width="40" height="40" fill="#2547e0" fill-opacity="0.6"/>
+<rect x="28" y="62" width="40" height="40" fill="#6a3df0" fill-opacity="1"/>
+<rect x="68" y="62" width="40" height="40" fill="#9fe0ff" fill-opacity="1"/>
+<rect x="110" y="62" width="40" height="40" fill="#8a5cf5" fill-opacity="0.8"/>
+<rect x="68" y="112" width="40" height="40" fill="#2a58f5" fill-opacity="0.9"/>
+<rect x="0" y="112" width="40" height="40" fill="#2040c8" fill-opacity="0.5"/>
+</g>
+<g id="Pixels-baixo-esquerda">
+<rect x="0" y="492" width="60" height="60" fill="#7a45f5" fill-opacity="0.95"/>
+<rect x="67" y="558" width="60" height="60" fill="#7a45f5" fill-opacity="0.95"/>
+<rect x="125" y="558" width="60" height="60" fill="#4a4df0" fill-opacity="0.95"/>
+<rect x="0" y="558" width="60" height="60" fill="#1a4bff" fill-opacity="0.95"/>
+<rect x="0" y="620" width="60" height="60" fill="#2a8cff" fill-opacity="0.95"/>
+<rect x="67" y="620" width="60" height="60" fill="#9fdcff" fill-opacity="0.95"/>
+<rect x="125" y="620" width="60" height="60" fill="#8a5cf5" fill-opacity="0.95"/>
+<rect x="0" y="683" width="60" height="60" fill="#3aa0ff" fill-opacity="0.95"/>
+<rect x="67" y="683" width="60" height="60" fill="#4a8cff" fill-opacity="0.95"/>
+<rect x="125" y="683" width="60" height="60" fill="#a8d4ff" fill-opacity="0.95"/>
+<rect x="184" y="683" width="60" height="60" fill="#8a5cf5" fill-opacity="0.95"/>
+<rect x="0" y="745" width="60" height="60" fill="#1a6aff" fill-opacity="0.95"/>
+<rect x="67" y="745" width="60" height="60" fill="#2a7aff" fill-opacity="0.95"/>
+<rect x="125" y="745" width="60" height="60" fill="#5aa8ff" fill-opacity="0.95"/>
+</g>
+<g id="Pixels-baixo-direita">
+<rect x="1900" y="510" width="54" height="54" fill="#1a2fb0" fill-opacity="0.95"/>
+<rect x="1900" y="562" width="54" height="54" fill="#1a50ff" fill-opacity="0.95"/>
+<rect x="1900" y="618" width="54" height="54" fill="#2a6aff" fill-opacity="0.95"/>
+<rect x="1846" y="633" width="54" height="54" fill="#9fe0ff" fill-opacity="0.95"/>
+<rect x="1952" y="633" width="54" height="54" fill="#2a8cff" fill-opacity="0.95"/>
+<rect x="1792" y="690" width="54" height="54" fill="#a8c8ff" fill-opacity="0.95"/>
+<rect x="1846" y="690" width="54" height="54" fill="#2a50f0" fill-opacity="0.95"/>
+<rect x="1900" y="690" width="54" height="54" fill="#3ab4ff" fill-opacity="0.95"/>
+<rect x="1850" y="745" width="54" height="54" fill="#4a90ff" fill-opacity="0.95"/>
+<rect x="1792" y="745" width="54" height="54" fill="#2a60ff" fill-opacity="0.95"/>
+</g>
+<g id="Pixels-topo-direita" fill="#1a3fc0" fill-opacity="0.45">
+<rect x="1930" y="30" width="34" height="34"/><rect x="1966" y="30" width="33" height="34"/>
+<rect x="1930" y="64" width="34" height="34"/><rect x="1966" y="64" width="33" height="34"/>
+<rect x="1930" y="96" width="34" height="34"/><rect x="1966" y="96" width="33" height="34"/>
+<rect x="1930" y="130" width="34" height="34"/><rect x="1966" y="130" width="33" height="34"/>
+<rect x="1930" y="162" width="34" height="34"/><rect x="1966" y="162" width="33" height="34"/>
+</g>
+</svg>

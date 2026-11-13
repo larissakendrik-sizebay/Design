@@ -1,0 +1,325 @@
+<title>Together We Fit Caixas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: editorial board v2. The logo comes first and large; then fashion shapes, geometric people, and the unisex tee. */
+:root{
+  --blue:#0039FF; --woven:#6FA3FF; --red:#FF3B2E; --citron:#D9E73F; --ink:#0B0B0B; --ivory:#F6F3E8;
+  --paper2:#EBE6D3; --muted:#5b584d;
+  --display:'Bricolage Grotesque','Arial Narrow',Arial,sans-serif;
+  --serif:'Instrument Serif',Georgia,serif;
+  --text:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--ivory);color:var(--ink);font:400 16px/1.55 var(--text);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.2;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .42 0 0 0 0 .34 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:1280px;margin:0 auto}
+svg{display:block;max-width:100%;height:auto}
+h1,h2,h3,p{margin:0}
+.eyebrow{font:600 12px/1.2 var(--text);letter-spacing:.14em;text-transform:uppercase}
+.top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:20px;border-bottom:2px solid var(--ink)}
+.top span:last-child{color:var(--muted)}
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:36px;align-items:center;padding-block:44px 56px}
+.hero h1{font:800 clamp(34px,4.6vw,60px)/.95 var(--display);letter-spacing:-.04em;font-variation-settings:"wdth" 90;margin-bottom:16px}
+.hero p{color:var(--muted);max-width:34em}
+.hero .motto{font:italic 400 28px/1.15 var(--serif);color:var(--ink);margin-top:20px}
+section{padding-block:56px;border-top:2px solid var(--ink)}
+.sh{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:24px;margin-bottom:32px}
+.sh h2{font:800 clamp(30px,4vw,52px)/.95 var(--display);letter-spacing:-.035em;font-variation-settings:"wdth" 90}
+.sh p{max-width:46em;color:var(--muted)}
+.sh .eyebrow{margin-bottom:10px}
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.g6{grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr))}
+.board{background:var(--paper2);padding:20px;min-width:0}
+.tile{display:flex;align-items:center;justify-content:center;padding:32px;min-width:0}
+.t-ivory{background:var(--ivory);border:1.5px solid var(--ink)}
+.t-blue{background:var(--blue);--l1:#F6F3E8;--l1t:#0039FF;--l4:#0B0B0B}
+.t-ink{background:var(--ink)}
+.t-citron{background:var(--citron);--l3:#F6F3E8}
+.t-mono{background:var(--ivory);border:1.5px solid var(--ink);--l1:#0B0B0B;--l1t:#F6F3E8;--l2:#0B0B0B;--l2t:#F6F3E8;--l3:#0B0B0B;--l3t:#F6F3E8;--l4:#0B0B0B}
+.cap{margin-top:12px;font:600 11px/1.3 var(--text);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cap b{color:var(--ink)}
+.test{display:flex;gap:28px;align-items:flex-end;flex-wrap:wrap}
+.busy{background:var(--paper2)}
+.notes{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.notes h3{font:700 22px/1.1 var(--display);letter-spacing:-.02em;margin-bottom:8px}
+.notes p{color:var(--muted)}
+.next{margin-top:36px;padding:24px;background:var(--ink);color:var(--ivory)}
+.next h3{font:800 28px/1 var(--display);letter-spacing:-.03em;margin-bottom:14px}
+.next ul{margin:0;padding-left:1.1em;display:grid;gap:6px}
+footer{padding-block:28px 40px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+@media(max-width:820px){.hero{grid-template-columns:1fr}.sh{grid-template-columns:1fr;gap:8px}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="paper" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="3" seed="3" result="t"/>
+      <feColorMatrix in="t" type="matrix" values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0 1" result="g"/>
+      <feComponentTransfer in="g" result="g2"><feFuncR type="linear" slope=".34" intercept=".8"/><feFuncG type="linear" slope=".34" intercept=".8"/><feFuncB type="linear" slope=".34" intercept=".8"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="g2" mode="multiply" result="b"/>
+      <feComposite in="b" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <linearGradient id="shade" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".1"/><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".12"/></linearGradient>
+    <path id="shirtP" d="M110 24 L58 42 L8 92 L44 128 L74 104 L74 316 H246 V104 L276 128 L312 92 L262 42 L210 24 Q160 62 110 24Z"/>
+
+    <!-- LOGO A: Tijolos (principal). Each word sits in its own box; the boxes interlock with the same shapes as the mark. -->
+    <symbol id="logoBrick" viewBox="0 0 520 270">
+      <rect x="0" y="0" width="520" height="124" style="fill:var(--l1,#0039FF)"/>
+      <text x="26" y="101" textLength="468" lengthAdjust="spacingAndGlyphs" style="font:800 112px 'Bricolage Grotesque','Arial Narrow',Impact,sans-serif;font-variation-settings:'wdth' 75;fill:var(--l1t,#F6F3E8)">TOGETHER</text>
+      <path d="M200 136H460L520 196V270H200Z" style="fill:var(--l3,#D9E73F)"/>
+      <path d="M0 136H190V270H60A60 60 0 0 1 0 210Z" style="fill:var(--l2,#FF3B2E)"/>
+      <circle cx="190" cy="203" r="26" style="fill:var(--l2,#FF3B2E)"/>
+      <polygon points="468,136 520,136 520,188" style="fill:var(--l4,#0B0B0B)"/>
+      <text x="22" y="245" textLength="130" lengthAdjust="spacingAndGlyphs" style="font:800 120px 'Bricolage Grotesque','Arial Narrow',Impact,sans-serif;font-variation-settings:'wdth' 75;fill:var(--l2t,#F6F3E8)">WE</text>
+      <text x="252" y="245" textLength="214" lengthAdjust="spacingAndGlyphs" style="font:800 120px 'Bricolage Grotesque','Arial Narrow',Impact,sans-serif;font-variation-settings:'wdth' 75;fill:var(--l3t,#0B0B0B)">FIT</text>
+    </symbol>
+
+    <!-- LOGO B: Fita métrica. Boxed words over a measuring tape. -->
+    <symbol id="logoTape" viewBox="0 0 520 190">
+      <rect x="0" y="0" width="300" height="110" style="fill:var(--l1,#0039FF)"/>
+      <rect x="310" y="0" width="90" height="110" style="fill:var(--l2,#FF3B2E)"/>
+      <rect x="410" y="0" width="110" height="110" style="fill:var(--l3x,#0B0B0B)"/>
+      <text x="20" y="87" textLength="260" lengthAdjust="spacingAndGlyphs" style="font:800 92px 'Bricolage Grotesque','Arial Narrow',Impact,sans-serif;font-variation-settings:'wdth' 75;fill:var(--l1t,#F6F3E8)">TOGETHER</text>
+      <text x="322" y="87" textLength="66" lengthAdjust="spacingAndGlyphs" style="font:800 92px 'Bricolage Grotesque','Arial Narrow',Impact,sans-serif;font-variation-settings:'wdth' 75;fill:var(--l2t,#F6F3E8)">WE</text>
+      <text x="424" y="87" textLength="82" lengthAdjust="spacingAndGlyphs" style="font:800 92px 'Bricolage Grotesque','Arial Narrow',Impact,sans-serif;font-variation-settings:'wdth' 75;fill:var(--l3xt,#D9E73F)">FIT</text>
+      <rect x="0" y="122" width="520" height="62" style="fill:var(--l3,#D9E73F)"/>
+      <path d="M1 123H519" stroke="#0B0B0B" stroke-width="16" stroke-dasharray="1.6 8.4" fill="none"/>
+      <path d="M1 123H519" stroke="#0B0B0B" stroke-width="30" stroke-dasharray="2 48" fill="none"/>
+      <g style="font:600 12px 'Instrument Sans',sans-serif;fill:#0B0B0B"><text x="6" y="172">0</text><text x="56" y="172">5</text><text x="106" y="172">10</text><text x="156" y="172">15</text><text x="206" y="172">20</text><text x="256" y="172">25</text><text x="306" y="172">30</text><text x="356" y="172">35</text><text x="406" y="172">40</text><text x="456" y="172">45</text></g>
+      <rect x="0" y="122" width="7" height="62" fill="#0B0B0B"/>
+    </symbol>
+
+    <!-- LOGO C: Figurino. The words dress a figure: jacket box over two trouser boxes. -->
+    <symbol id="logoFigure" viewBox="0 0 360 450">
+      <circle cx="180" cy="40" r="34" style="fill:var(--l4,#0B0B0B)"/>
+      <polygon points="180,6 214,40 180,74 192,40" fill="#fff" opacity=".22"/>
+      <rect x="0" y="86" width="360" height="112" style="fill:var(--l1,#0039FF)"/>
+      <text x="22" y="176" textLength="316" lengthAdjust="spacingAndGlyphs" style="font:800 96px 'Bricolage Grotesque','Arial Narrow',Impact,sans-serif;font-variation-settings:'wdth' 75;fill:var(--l1t,#F6F3E8)">TOGETHER</text>
+      <rect x="54" y="208" width="120" height="204" style="fill:var(--l2,#FF3B2E)"/>
+      <rect x="186" y="208" width="120" height="204" style="fill:var(--l3,#D9E73F)"/>
+      <text x="70" y="330" textLength="88" lengthAdjust="spacingAndGlyphs" style="font:800 104px 'Bricolage Grotesque','Arial Narrow',Impact,sans-serif;font-variation-settings:'wdth' 75;fill:var(--l2t,#F6F3E8)">WE</text>
+      <text x="202" y="330" textLength="88" lengthAdjust="spacingAndGlyphs" style="font:800 104px 'Bricolage Grotesque','Arial Narrow',Impact,sans-serif;font-variation-settings:'wdth' 75;fill:var(--l3t,#0B0B0B)">FIT</text>
+      <rect x="44" y="412" width="132" height="26" style="fill:var(--l4,#0B0B0B)"/><rect x="184" y="412" width="132" height="26" style="fill:var(--l4,#0B0B0B)"/>
+    </symbol>
+
+    <!-- Geometric people, built mostly from rectangles -->
+    <symbol id="figM" viewBox="0 0 120 300">
+      <rect x="53" y="46" width="14" height="28" style="fill:var(--skin,#8C5A3C)"/>
+      <rect x="44" y="8" width="32" height="42" rx="14" style="fill:var(--skin,#8C5A3C)"/>
+      <rect x="42" y="4" width="36" height="14" rx="3" style="fill:var(--hair,#0B0B0B)"/>
+      <rect x="46" y="24" width="28" height="8" fill="#0B0B0B"/><rect x="50" y="26" width="6" height="2.5" fill="#F6F3E8"/>
+      <rect x="28" y="184" width="30" height="104" style="fill:var(--c3,#0B0B0B)"/><rect x="62" y="184" width="30" height="104" style="fill:var(--c3,#0B0B0B)"/>
+      <rect x="62" y="184" width="30" height="104" fill="#fff" opacity=".1"/>
+      <rect x="28" y="184" width="64" height="8" fill="#0B0B0B"/>
+      <rect x="22" y="288" width="36" height="10" fill="#0B0B0B"/><rect x="62" y="288" width="36" height="10" fill="#0B0B0B"/>
+      <rect x="14" y="72" width="92" height="112" style="fill:var(--c1,#0039FF)"/>
+      <rect x="4" y="76" width="16" height="104" style="fill:var(--c1,#0039FF)"/><rect x="100" y="76" width="16" height="104" style="fill:var(--c1,#0039FF)"/>
+      <rect x="4" y="76" width="16" height="104" fill="#000" opacity=".12"/>
+      <polygon points="60,72 106,72 106,184 60,184" fill="#fff" opacity=".14"/>
+      <polygon points="44,72 60,72 60,132" fill="#F6F3E8"/><polygon points="76,72 60,72 60,132" fill="#E4DEC8"/>
+      <rect x="24" y="142" width="22" height="8" fill="#000" opacity=".2"/>
+      <rect x="4" y="180" width="16" height="12" style="fill:var(--skin,#8C5A3C)"/><rect x="100" y="180" width="16" height="12" style="fill:var(--skin,#8C5A3C)"/>
+    </symbol>
+    <symbol id="figW" viewBox="0 0 120 300">
+      <rect x="53" y="46" width="14" height="28" style="fill:var(--skin,#F2C5A0)"/>
+      <rect x="45" y="12" width="30" height="40" rx="13" style="fill:var(--skin,#F2C5A0)"/>
+      <polygon points="38,10 82,10 90,64 76,64 76,26 44,26 44,64 30,64" style="fill:var(--hair,#0B0B0B)"/>
+      <rect x="42" y="44" width="6" height="6" rx="3" fill="#D9E73F"/>
+      <rect x="18" y="80" width="12" height="92" style="fill:var(--skin,#F2C5A0)"/><rect x="90" y="80" width="12" height="92" style="fill:var(--skin,#F2C5A0)"/>
+      <rect x="30" y="74" width="60" height="54" style="fill:var(--c1,#D9E73F)"/>
+      <polygon points="50,74 70,74 60,92" style="fill:var(--skin,#F2C5A0)"/>
+      <polygon points="60,74 90,74 90,128 60,128" fill="#fff" opacity=".2"/>
+      <rect x="30" y="128" width="60" height="10" fill="#0B0B0B"/>
+      <polygon points="30,138 90,138 106,290 66,290 60,200 54,290 14,290" style="fill:var(--c3,#FF3B2E)"/>
+      <polygon points="60,138 90,138 106,290 66,290 60,200" fill="#000" opacity=".1"/>
+      <rect x="12" y="290" width="44" height="9" fill="#0B0B0B"/><rect x="64" y="290" width="44" height="9" fill="#0B0B0B"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+<div class="top"><span class="eyebrow">Sizebay · Grupo Audaces · Kickoff 2027</span><span class="eyebrow">Identidade visual · Proposta v2 · Foco no logotipo</span></div>
+
+<header class="hero">
+  <svg viewBox="0 0 520 270" role="img" aria-label="Logotipo Together We Fit, uma palavra por caixa"><use href="#logoBrick" width="520" height="270"/></svg>
+  <div>
+    <h1>Uma palavra, uma caixa, um encaixe</h1>
+    <p>Cada palavra ganhou sua própria caixa sólida, então o nome lê bem sobre qualquer fundo, foto ou estampa. As caixas se encaixam com as mesmas formas do símbolo: quarto de círculo, triângulo e círculo.</p>
+    <p class="motto">Alone we fit well. Together, we fit perfectly.</p>
+  </div>
+</header>
+
+<!-- LOGOS -->
+<section>
+  <div class="sh">
+    <div><div class="eyebrow">Logotipo</div><h2>Quatro caminhos com caixas</h2></div>
+    <p>A opção A é a recomendada: é a mais legível e a que mais usa as formas geométricas. As outras três levam o mesmo sistema para o universo da moda.</p>
+  </div>
+  <div class="grid g2">
+    <div>
+      <div class="tile t-ivory" style="padding:40px"><svg viewBox="0 0 520 270" style="width:100%;max-width:460px" role="img" aria-label="Opção A, tijolos"><use href="#logoBrick" width="520" height="270"/></svg></div>
+      <p class="cap"><b>A · Tijolos (recomendada).</b> Caixas encaixadas com canto curvo, canto cortado e uma peça de círculo.</p>
+    </div>
+    <div>
+      <div class="tile t-ivory" style="padding:40px"><svg viewBox="0 0 520 190" style="width:100%;max-width:460px" role="img" aria-label="Opção B, fita métrica"><use href="#logoTape" width="520" height="190"/></svg></div>
+      <p class="cap"><b>B · Fita métrica.</b> Três caixas sobre uma fita com números. Boa para faixas, etiquetas e rodapés.</p>
+    </div>
+    <div>
+      <div class="tile t-ivory" style="padding:40px">
+        <svg viewBox="0 0 700 290" style="width:100%;max-width:520px" role="img" aria-label="Opção C, manequim com tijolos">
+          <circle cx="86" cy="26" r="14" fill="#0B0B0B"/><rect x="80" y="38" width="12" height="12" fill="#0B0B0B"/>
+          <polygon points="38,50 134,50 150,118 22,118" fill="#D9E73F"/><polygon points="86,50 134,50 150,118 86,118" fill="#fff" opacity=".25"/>
+          <rect x="30" y="118" width="112" height="76" fill="#0039FF"/><rect x="30" y="194" width="112" height="20" fill="#FF3B2E"/>
+          <rect x="80" y="214" width="12" height="46" fill="#0B0B0B"/><rect x="46" y="260" width="80" height="12" fill="#0B0B0B"/>
+          <use href="#logoBrick" x="190" y="30" width="500" height="260"/>
+        </svg>
+      </div>
+      <p class="cap"><b>C · Manequim.</b> Um busto montado só com retângulos e trapézios ao lado do logo.</p>
+    </div>
+    <div>
+      <div class="tile t-ivory" style="padding:40px"><svg viewBox="0 0 360 450" style="width:100%;max-width:300px" role="img" aria-label="Opção D, figurino"><use href="#logoFigure" width="360" height="450"/></svg></div>
+      <p class="cap"><b>D · Figurino.</b> As palavras vestem uma figura: jaqueta em cima e duas pernas de calça.</p>
+    </div>
+  </div>
+
+  <div class="grid g4" style="margin-top:36px">
+    <div class="tile t-blue"><svg viewBox="0 0 520 270" style="width:100%;max-width:230px"><use href="#logoBrick" width="520" height="270"/></svg></div>
+    <div class="tile t-ink"><svg viewBox="0 0 520 270" style="width:100%;max-width:230px"><use href="#logoBrick" width="520" height="270"/></svg></div>
+    <div class="tile t-citron"><svg viewBox="0 0 520 270" style="width:100%;max-width:230px"><use href="#logoBrick" width="520" height="270"/></svg></div>
+    <div class="tile t-mono"><svg viewBox="0 0 520 270" style="width:100%;max-width:230px"><use href="#logoBrick" width="520" height="270"/></svg></div>
+  </div>
+  <p class="cap">Versões da opção A · azul, preto, amarelo e monocromática</p>
+
+  <div class="grid g2" style="margin-top:36px">
+    <div class="board">
+      <div class="test">
+        <svg viewBox="0 0 520 270" width="220"><use href="#logoBrick" width="520" height="270"/></svg>
+        <svg viewBox="0 0 520 270" width="120"><use href="#logoBrick" width="520" height="270"/></svg>
+        <svg viewBox="0 0 520 270" width="64"><use href="#logoBrick" width="520" height="270"/></svg>
+        <svg viewBox="0 0 520 270" width="40"><use href="#logoBrick" width="520" height="270"/></svg>
+      </div>
+      <p class="cap">Teste de tamanho · 220, 120, 64 e 40 px de largura</p>
+    </div>
+    <div class="board busy">
+      <svg viewBox="0 0 520 200" role="img" aria-label="Logo sobre fundo cheio de formas">
+        <g filter="url(#paper)"><rect width="520" height="200" fill="#EBE6D3"/><circle cx="90" cy="60" r="90" fill="#FF3B2E"/><path d="M520 200H300A220 220 0 0 1 520 0Z" fill="#0039FF"/><polygon points="170,0 330,0 170,150" fill="#D9E73F"/><polygon points="0,200 120,90 240,200" fill="#0B0B0B"/></g>
+        <use href="#logoBrick" x="120" y="30" width="280" height="146"/>
+      </svg>
+      <p class="cap">Teste de fundo · as caixas sólidas seguram a leitura sobre formas e cores</p>
+    </div>
+  </div>
+</section>
+
+<!-- FASHION SHAPES -->
+<section>
+  <div class="sh">
+    <div><div class="eyebrow">Formas da moda</div><h2>Retângulos de ateliê</h2></div>
+    <p>Uma biblioteca de peças simples, quase todas feitas de retângulos e trapézios, como as roupas das modelos. Elas servem como adesivos, ícones, estampas e molduras para o logo.</p>
+  </div>
+  <div class="grid g6">
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Gola"><rect x="20" y="40" width="80" height="62" fill="#0039FF"/><polygon points="60,44 34,26 26,62" fill="#F6F3E8"/><polygon points="60,44 86,26 94,62" fill="#E4DEC8"/><rect x="56" y="46" width="8" height="56" fill="#F6F3E8"/><rect x="57" y="66" width="6" height="6" fill="#0B0B0B"/></svg><p class="cap">Gola</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Lapela"><rect x="24" y="12" width="72" height="98" fill="#FF3B2E"/><polygon points="40,12 60,12 60,68" fill="#F6F3E8"/><polygon points="80,12 60,12 60,68" fill="#E4DEC8"/><circle cx="60" cy="88" r="5" fill="#D9E73F"/></svg><p class="cap">Lapela</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Bolso"><rect x="20" y="30" width="80" height="70" fill="#0039FF"/><rect x="20" y="30" width="80" height="20" fill="#0B0B0B"/><rect x="28" y="56" width="64" height="36" fill="none" stroke="#F6F3E8" stroke-width="2.5" stroke-dasharray="6 4"/></svg><p class="cap">Bolso</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Calça"><rect x="28" y="12" width="64" height="12" fill="#0B0B0B"/><rect x="28" y="24" width="30" height="88" fill="#0039FF"/><rect x="62" y="24" width="30" height="88" fill="#6FA3FF"/></svg><p class="cap">Calça</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Saia"><polygon points="36,22 84,22 106,104 14,104" fill="#FF3B2E"/><polygon points="60,22 84,22 106,104 60,104" fill="#fff" opacity=".18"/><rect x="36" y="14" width="48" height="10" fill="#0B0B0B"/></svg><p class="cap">Saia</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Manga"><polygon points="20,26 74,26 100,98 46,98" fill="#D9E73F"/><polygon points="74,26 100,98 46,98" fill="#fff" opacity=".22"/><polygon points="46,98 100,98 104,112 42,112" fill="#0B0B0B"/></svg><p class="cap">Manga</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Cinto"><rect x="6" y="46" width="108" height="28" fill="#0B0B0B"/><rect x="46" y="36" width="30" height="48" fill="none" stroke="#D9E73F" stroke-width="7"/><circle cx="92" cy="60" r="3" fill="#F6F3E8"/><circle cx="102" cy="60" r="3" fill="#F6F3E8"/></svg><p class="cap">Cinto</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Manequim"><circle cx="60" cy="14" r="8" fill="#0B0B0B"/><rect x="56" y="22" width="8" height="10" fill="#0B0B0B"/><polygon points="34,32 86,32 94,62 26,62" fill="#D9E73F"/><rect x="30" y="62" width="60" height="30" fill="#0039FF"/><rect x="57" y="92" width="6" height="16" fill="#0B0B0B"/><rect x="40" y="108" width="40" height="7" fill="#0B0B0B"/></svg><p class="cap">Manequim</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Fita métrica reta"><g transform="rotate(-24 60 60)"><rect x="0" y="40" width="120" height="40" fill="#D9E73F"/><path d="M2 41H118" stroke="#0B0B0B" stroke-width="14" stroke-dasharray="1.6 6.4" fill="none"/><path d="M2 41H118" stroke="#0B0B0B" stroke-width="24" stroke-dasharray="2 38" fill="none"/><rect x="0" y="40" width="6" height="40" fill="#0B0B0B"/></g></svg><p class="cap">Fita métrica</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Rolo de fita"><circle cx="58" cy="58" r="46" fill="#D9E73F"/><circle cx="58" cy="58" r="41" fill="none" stroke="#0B0B0B" stroke-width="6" stroke-dasharray="1.6 8.4"/><circle cx="58" cy="58" r="16" fill="#0B0B0B"/><circle cx="58" cy="58" r="5" fill="#F6F3E8"/><rect x="58" y="100" width="58" height="14" fill="#D9E73F"/><path d="M62 112H114" stroke="#0B0B0B" stroke-width="6" stroke-dasharray="1.6 8.4"/></svg><p class="cap">Rolo de fita</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Cabide"><path d="M60 52L108 92H12Z" fill="#D9E73F" stroke="#0B0B0B" stroke-width="5" stroke-linejoin="round"/><path d="M60 52V44C60 38 72 36 72 26C72 14 52 14 52 26" fill="none" stroke="#0B0B0B" stroke-width="5" stroke-linecap="round"/><rect x="52" y="68" width="16" height="16" fill="#0039FF"/></svg><p class="cap">Cabide</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Etiqueta com caixa"><g transform="rotate(-10 60 60)"><rect x="26" y="10" width="68" height="100" fill="#F6F3E8" stroke="#0B0B0B" stroke-width="3"/><circle cx="60" cy="24" r="5" fill="#EBE6D3" stroke="#0B0B0B" stroke-width="2"/><rect x="34" y="42" width="52" height="24" fill="#0039FF"/><text x="60" y="61" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="19" fill="#F6F3E8">FIT</text><rect x="34" y="72" width="52" height="24" fill="#FF3B2E"/><text x="60" y="91" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="19" fill="#F6F3E8">M</text></g></svg><p class="cap">Etiqueta</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Botão"><rect x="14" y="14" width="92" height="92" fill="#0039FF"/><circle cx="60" cy="60" r="34" fill="none" stroke="#F6F3E8" stroke-width="3"/><circle cx="50" cy="50" r="4.5" fill="#F6F3E8"/><circle cx="70" cy="50" r="4.5" fill="#F6F3E8"/><circle cx="50" cy="70" r="4.5" fill="#F6F3E8"/><circle cx="70" cy="70" r="4.5" fill="#F6F3E8"/><path d="M50 50L70 70M70 50L50 70" stroke="#FF3B2E" stroke-width="3" stroke-linecap="round"/></svg><p class="cap">Botão</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Lenço"><polygon points="12,38 88,38 108,82 32,82" fill="#FF3B2E"/><polygon points="12,38 50,38 32,82" fill="#D9E73F"/><polygon points="88,38 108,82 70,82" fill="#0039FF"/><rect x="50" y="82" width="20" height="26" fill="#FF3B2E"/></svg><p class="cap">Lenço</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Molde"><polygon points="30,12 90,12 102,42 90,108 30,108 18,42" fill="#F6F3E8" stroke="#0B0B0B" stroke-width="2.5" stroke-dasharray="5 4" stroke-linejoin="round"/><path d="M60 34V86" stroke="#FF3B2E" stroke-width="2.5"/><polygon points="60,28 55,38 65,38" fill="#FF3B2E"/><polygon points="60,92 55,82 65,82" fill="#FF3B2E"/><polygon points="18,42 26,38 26,46" fill="#0B0B0B"/><polygon points="102,42 94,38 94,46" fill="#0B0B0B"/></svg><p class="cap">Molde</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Zíper"><rect x="40" y="6" width="40" height="108" fill="#0B0B0B"/><g fill="#D9E73F"><rect x="48" y="12" width="12" height="7"/><rect x="48" y="30" width="12" height="7"/><rect x="48" y="48" width="12" height="7"/><rect x="48" y="66" width="12" height="7"/><rect x="48" y="84" width="12" height="7"/></g><g fill="#F6F3E8"><rect x="60" y="21" width="12" height="7"/><rect x="60" y="39" width="12" height="7"/><rect x="60" y="57" width="12" height="7"/><rect x="60" y="75" width="12" height="7"/><rect x="60" y="93" width="12" height="7"/></g><rect x="46" y="98" width="28" height="14" fill="#FF3B2E"/></svg><p class="cap">Zíper</p></div>
+  </div>
+</section>
+
+<!-- FIGURINO -->
+<section>
+  <div class="sh">
+    <div><div class="eyebrow">Figurino geométrico</div><h2>Ele e ela, em retângulos</h2></div>
+    <p>Uma modelo e um modelo montados com os mesmos blocos das roupas: blazer retangular, lapelas, calça larga, top curto. Peles em tons diferentes, porque everybody fits. Em cores trocadas, viram um elenco inteiro.</p>
+  </div>
+  <div class="grid g4">
+    <div class="board" style="background:#F6F3E8;border:1.5px solid #0B0B0B"><svg viewBox="0 0 200 340"><g filter="url(#paper)"><circle cx="100" cy="150" r="82" fill="#FF3B2E"/></g><use href="#figW" x="40" y="20" width="120" height="300"/></svg></div>
+    <div class="board" style="background:#F6F3E8;border:1.5px solid #0B0B0B"><svg viewBox="0 0 200 340"><g filter="url(#paper)"><path d="M200 340H20A180 180 0 0 1 200 160Z" fill="#6FA3FF"/></g><use href="#figM" x="40" y="20" width="120" height="300"/></svg></div>
+    <div class="board" style="background:#F6F3E8;border:1.5px solid #0B0B0B"><svg viewBox="0 0 200 340"><g filter="url(#paper)"><polygon points="20,330 20,60 180,330" fill="#D9E73F"/></g><use href="#figW" x="40" y="20" width="120" height="300" style="--skin:#3B2417;--c1:#0039FF;--c3:#0B0B0B"/></svg></div>
+    <div class="board" style="background:#F6F3E8;border:1.5px solid #0B0B0B"><svg viewBox="0 0 200 340"><g filter="url(#paper)"><rect x="30" y="50" width="140" height="240" fill="#0B0B0B"/></g><use href="#figM" x="40" y="20" width="120" height="300" style="--skin:#F2C5A0;--hair:#8a5a2b;--c1:#FF3B2E;--c3:#F6F3E8"/></svg></div>
+  </div>
+</section>
+
+<!-- TEES -->
+<section>
+  <div class="sh">
+    <div><div class="eyebrow">Camiseta</div><h2>Unissex, com ele e ela</h2></div>
+    <p>A estampa agora tem uma modelo e um modelo lado a lado, com o logo em caixas por baixo. A segunda camiseta aposta só no logo grande, para o máximo de leitura.</p>
+  </div>
+  <div class="grid g3">
+    <div class="board">
+      <svg viewBox="0 0 320 340" role="img" aria-label="Camiseta marfim com modelos e logo">
+        <ellipse cx="160" cy="328" rx="120" ry="8" fill="#000" opacity=".12"/>
+        <use href="#shirtP" fill="#F6F3E8"/><use href="#shirtP" fill="url(#shade)"/>
+        <path d="M110 24Q160 62 210 24" fill="none" stroke="#0B0B0B" stroke-width="6" opacity=".85"/>
+        <circle cx="160" cy="150" r="58" fill="#FF3B2E"/>
+        <use href="#figW" x="106" y="84" width="56" height="140"/><use href="#figM" x="160" y="84" width="56" height="140"/>
+        <use href="#logoBrick" x="102" y="240" width="116" height="60"/>
+      </svg>
+      <p class="cap">Frente · marfim · ele e ela</p>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 320 340" role="img" aria-label="Camiseta azul com logo grande">
+        <ellipse cx="160" cy="328" rx="120" ry="8" fill="#000" opacity=".12"/>
+        <use href="#shirtP" fill="#0039FF"/><use href="#shirtP" fill="url(#shade)"/>
+        <path d="M110 24Q160 62 210 24" fill="none" stroke="#F6F3E8" stroke-width="6"/>
+        <g style="--l1:#F6F3E8;--l1t:#0039FF"><use href="#logoBrick" x="86" y="112" width="148" height="77"/></g>
+        <use href="#figW" x="100" y="204" width="34" height="85"/><use href="#figM" x="186" y="204" width="34" height="85"/>
+        <rect x="140" y="236" width="40" height="8" fill="#D9E73F"/>
+      </svg>
+      <p class="cap">Frente · azul · logo grande</p>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 320 340" role="img" aria-label="Camiseta preta, costas com modelos">
+        <ellipse cx="160" cy="328" rx="120" ry="8" fill="#000" opacity=".12"/>
+        <use href="#shirtP" fill="#0B0B0B"/><use href="#shirtP" fill="url(#shade)"/>
+        <path d="M110 24Q160 34 210 24" fill="none" stroke="#2a2a2a" stroke-width="6"/>
+        <polygon points="90,300 90,150 230,300" fill="#D9E73F"/>
+        <use href="#figW" x="94" y="76" width="68" height="170" style="--c1:#0039FF;--c3:#FF3B2E"/>
+        <use href="#figM" x="158" y="76" width="68" height="170" style="--c1:#F6F3E8;--c3:#0039FF;--skin:#3B2417"/>
+        <rect x="90" y="262" width="140" height="22" fill="#F6F3E8"/>
+        <text x="160" y="278" text-anchor="middle" textLength="124" lengthAdjust="spacingAndGlyphs" font-family="Bricolage Grotesque,Arial Narrow,sans-serif" font-weight="800" font-size="19" fill="#0B0B0B">WE FIT PERFECTLY</text>
+      </svg>
+      <p class="cap">Costas · preta · ele e ela</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sh">
+    <div><div class="eyebrow">Direção</div><h2>O que mudou da v1</h2></div>
+    <p>Esta rodada responde ao retorno: logo legível e em caixas, formas ligadas à moda e modelos nas camisetas.</p>
+  </div>
+  <div class="notes">
+    <div><h3>Logo em caixas</h3><p>Cada palavra tem uma caixa sólida, com letras pesadas e em caixa-alta. A leitura não depende do fundo.</p></div>
+    <div><h3>Formas de moda</h3><p>Fita métrica, manequim, lapela, bolso, cinto e etiqueta, quase todos em retângulos, como as roupas das modelos.</p></div>
+    <div><h3>Ele e ela</h3><p>A camiseta é unissex, então a estampa mostra um modelo e uma modelo juntos, com peles e cores diferentes.</p></div>
+  </div>
+  <div class="next">
+    <h3>Para decidir juntos</h3>
+    <ul>
+      <li>Escolher o caminho do logo: A (tijolos), B (fita), C (manequim) ou D (figurino).</li>
+      <li>Trocar as figuras geométricas por fotos de modelos sorrindo, recortadas sobre as formas.</li>
+      <li>Levar o logo escolhido para copo, backdrop e slides.</li>
+    </ul>
+  </div>
+</section>
+
+<footer><span>Together We Fit · Sizebay · Kickoff 2027</span><span>Proposta de identidade visual v2</span></footer>
+</div>

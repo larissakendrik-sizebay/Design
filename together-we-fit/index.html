@@ -1,0 +1,504 @@
+<title>Together We Fit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: editorial board. Hero lockup + key visual, then numbered-by-topic sections on a paper ground, one artboard per application. */
+:root{
+  --blue:#0039FF; --woven:#6FA3FF; --red:#FF3B2E; --citron:#D9E73F; --ink:#0B0B0B; --ivory:#F6F3E8;
+  --paper2:#EBE6D3; --muted:#5b584d; --line:#cfc9b4;
+  --display:'Bricolage Grotesque','Arial Narrow',Arial,sans-serif;
+  --serif:'Instrument Serif',Georgia,serif;
+  --text:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--ivory);color:var(--ink);font:400 16px/1.55 var(--text);padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.22;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .42 0 0 0 0 .34 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:1280px;margin:0 auto}
+svg{display:block;max-width:100%;height:auto}
+h1,h2,h3,p{margin:0}
+.eyebrow{font:600 12px/1.2 var(--text);letter-spacing:.14em;text-transform:uppercase}
+.top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:20px;border-bottom:2px solid var(--ink)}
+.top span:last-child{color:var(--muted)}
+
+/* Lockup (HTML version of the logo) */
+.lockup{display:inline-flex;align-items:center;gap:.28em;font-size:var(--fs,64px);line-height:1}
+.lockup .mk{width:1.9em;height:1.9em;flex:none}
+.lockup .tx{display:flex;flex-direction:column;font-family:var(--display);font-weight:800;letter-spacing:-.04em;line-height:.86;font-variation-settings:"wdth" 88}
+.lockup .tx i{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.01em;margin-right:.06em}
+.lockup.h .tx{flex-direction:row;gap:.22em;white-space:nowrap}
+.lockup.h .mk{width:1.25em;height:1.25em}
+.lockup.v{flex-direction:column;align-items:flex-start;gap:.2em}
+.lockup.v .tx{flex-direction:column}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:32px;align-items:center;padding-block:40px 56px}
+.hero .lockup{--fs:clamp(44px,7.2vw,104px)}
+.hero .motto{font:italic 400 clamp(26px,3.2vw,40px)/1.12 var(--serif);margin-top:32px;max-width:15em}
+.hero .pt{margin-top:12px;color:var(--muted);max-width:34em}
+.hero .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{border:1.5px solid var(--ink);padding:4px 12px;font:600 12px/1.4 var(--text);letter-spacing:.08em;text-transform:uppercase;border-radius:99px}
+.kv{filter:drop-shadow(0 18px 30px rgba(11,11,11,.18))}
+
+/* Sections */
+section{padding-block:56px;border-top:2px solid var(--ink)}
+.sh{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:24px;margin-bottom:32px}
+.sh h2{font:800 clamp(30px,4vw,52px)/.95 var(--display);letter-spacing:-.035em;font-variation-settings:"wdth" 90}
+.sh p{max-width:46em;color:var(--muted)}
+.sh .eyebrow{margin-bottom:10px}
+
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.g6{grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr))}
+.board{background:var(--paper2);padding:20px;min-width:0}
+.board.ivory{background:var(--ivory);border:1.5px solid var(--ink)}
+.cap{margin-top:12px;font:600 11px/1.3 var(--text);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.tile{display:flex;align-items:center;justify-content:center;min-height:200px;padding:28px;min-width:0}
+.t-ivory{background:var(--ivory);border:1.5px solid var(--ink)}
+.t-blue{background:var(--blue);color:var(--ivory);--a:#F6F3E8;--e:#9DBBFF;--c:#0B0B0B}
+.t-ink{background:var(--ink);color:var(--ivory);--a:#4D7CFF;--c:#F6F3E8}
+.t-red{background:var(--red);color:var(--ink);--a:#F6F3E8;--b:#0B0B0B;--c:#F6F3E8;--d:#D9E73F;--e:#0039FF}
+.t-citron{background:var(--citron);color:var(--ink);--b:#0B0B0B;--d:#F6F3E8;--e:#0039FF}
+.t-mono{background:var(--ivory);border:1.5px solid var(--ink);--a:#0B0B0B;--b:#0B0B0B;--c:#0B0B0B;--d:#0B0B0B;--e:#0B0B0B}
+
+/* Palette */
+.pal{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:0;border:1.5px solid var(--ink)}
+.sw{padding:56px 14px 14px;font:500 13px/1.35 var(--text)}
+.sw b{display:block;font:700 15px/1.2 var(--display);margin-bottom:2px}
+.type{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));margin-top:20px}
+.type>div{border:1.5px solid var(--ink);padding:20px;min-width:0}
+.type .big{font-size:64px;line-height:.95}
+.type small{display:block;margin-top:12px;color:var(--muted);font-size:13px}
+
+.apps svg{width:100%}
+.notes{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.notes h3{font:700 22px/1.1 var(--display);letter-spacing:-.02em;margin-bottom:8px}
+.notes p{color:var(--muted)}
+.next{margin-top:36px;padding:24px;background:var(--ink);color:var(--ivory)}
+.next h3{font:800 28px/1 var(--display);letter-spacing:-.03em;margin-bottom:14px}
+.next ul{margin:0;padding-left:1.1em;display:grid;gap:6px}
+footer{padding-block:28px 40px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+@media(max-width:820px){.hero{grid-template-columns:1fr}.sh{grid-template-columns:1fr;gap:8px}}
+</style>
+
+<!-- Shared definitions: pieces, mark, geometric figures, paper filter -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="paper" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="3" seed="3" result="t"/>
+      <feColorMatrix in="t" type="matrix" values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0 1" result="g"/>
+      <feComponentTransfer in="g" result="g2"><feFuncR type="linear" slope=".34" intercept=".8"/><feFuncG type="linear" slope=".34" intercept=".8"/><feFuncB type="linear" slope=".34" intercept=".8"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="g2" mode="multiply" result="b"/>
+      <feComposite in="b" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <linearGradient id="shade" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".1"/><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".12"/></linearGradient>
+    <linearGradient id="floor" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#26262e"/><stop offset="1" stop-color="#0a0a0d"/></linearGradient>
+
+    <g id="pA"><path d="M2 2H48A46 46 0 0 1 2 48Z" style="fill:var(--a,#0039FF)"/></g>
+    <g id="pB"><path d="M52 2H98V48Z" style="fill:var(--b,#FF3B2E)"/></g>
+    <g id="pC"><path d="M52 9L91 48H52Z" style="fill:var(--c,#0B0B0B)"/></g>
+    <g id="pD"><circle cx="25" cy="75" r="23" style="fill:var(--d,#D9E73F)"/></g>
+    <g id="pE"><path d="M98 98H52A46 46 0 0 1 98 52Z" style="fill:var(--e,#6FA3FF)"/></g>
+    <symbol id="mark" viewBox="0 0 100 100"><use href="#pA"/><use href="#pB"/><use href="#pC"/><use href="#pD"/><use href="#pE"/></symbol>
+
+    <path id="shirtP" d="M110 24 L58 42 L8 92 L44 128 L74 104 L74 316 H246 V104 L276 128 L312 92 L262 42 L210 24 Q160 62 110 24Z"/>
+    <path id="cupP" d="M42 44H158L146 318Q145 328 135 328H65Q55 328 54 318Z"/>
+    <clipPath id="cupClip"><use href="#cupP"/></clipPath>
+
+    <!-- Geometric figures: origami-like folds from flat facets -->
+    <symbol id="figA" viewBox="0 0 120 300">
+      <rect x="52" y="44" width="16" height="30" style="fill:var(--skin,#0B0B0B)"/>
+      <ellipse cx="60" cy="28" rx="15" ry="19" style="fill:var(--skin,#0B0B0B)"/>
+      <polygon points="60,9 75,28 60,47 66,28" fill="#fff" opacity=".2"/>
+      <polygon points="30,168 60,168 56,288 34,288" style="fill:var(--c3,#0B0B0B)"/>
+      <polygon points="60,168 92,168 86,288 64,288" style="fill:var(--c3,#0B0B0B)"/>
+      <polygon points="60,168 92,168 86,288" fill="#fff" opacity=".12"/>
+      <polygon points="28,288 56,288 60,297 24,297" fill="#F6F3E8"/><polygon points="64,288 86,288 98,297 62,297" fill="#F6F3E8"/>
+      <polygon points="12,76 108,76 116,176 4,176" style="fill:var(--c1,#0039FF)"/>
+      <polygon points="60,76 108,76 116,176 60,158" fill="#fff" opacity=".16"/>
+      <polygon points="4,176 12,76 24,86 22,176" fill="#000" opacity=".14"/>
+      <polygon points="40,76 60,76 60,132" style="fill:var(--c2,#F6F3E8)"/>
+      <polygon points="80,76 60,76 60,132" fill="#E4DEC8"/>
+    </symbol>
+    <symbol id="figB" viewBox="0 0 120 300">
+      <polygon points="46,232 59,232 57,292 48,292" style="fill:var(--skin,#0B0B0B)"/><polygon points="61,232 74,232 72,292 63,292" style="fill:var(--skin,#0B0B0B)"/>
+      <polygon points="42,292 57,292 60,298 38,298" fill="#0B0B0B"/><polygon points="63,292 76,292 82,298 62,298" fill="#0B0B0B"/>
+      <rect x="52" y="44" width="16" height="30" style="fill:var(--skin,#0B0B0B)"/>
+      <ellipse cx="60" cy="28" rx="15" ry="19" style="fill:var(--skin,#0B0B0B)"/>
+      <polygon points="60,9 75,28 60,47 66,28" fill="#fff" opacity=".2"/>
+      <polygon points="34,74 86,74 114,236 6,236" style="fill:var(--c1,#FF3B2E)"/>
+      <polygon points="60,74 86,74 114,236 60,236" fill="#fff" opacity=".18"/>
+      <polygon points="60,74 34,74 6,236 60,236" fill="#000" opacity=".08"/>
+      <polygon points="38,118 82,118 84,132 36,132" fill="#0B0B0B"/>
+      <polygon points="34,74 60,74 34,112" style="fill:var(--c2,#D9E73F)"/>
+    </symbol>
+    <symbol id="figC" viewBox="0 0 120 300">
+      <rect x="52" y="44" width="16" height="30" style="fill:var(--skin,#0B0B0B)"/>
+      <ellipse cx="60" cy="28" rx="15" ry="19" style="fill:var(--skin,#0B0B0B)"/>
+      <polygon points="60,9 75,28 60,47 66,28" fill="#fff" opacity=".2"/>
+      <polygon points="22,140 98,140 112,290 66,290 60,194 54,290 8,290" style="fill:var(--c3,#F6F3E8)"/>
+      <polygon points="60,140 98,140 112,290 66,290 60,194" fill="#000" opacity=".1"/>
+      <polygon points="6,290 54,290 58,298 2,298" fill="#0B0B0B"/><polygon points="66,290 114,290 118,298 62,298" fill="#0B0B0B"/>
+      <polygon points="28,76 92,76 100,144 20,144" style="fill:var(--c1,#D9E73F)"/>
+      <polygon points="60,76 92,76 100,144 60,144" fill="#fff" opacity=".22"/>
+      <polygon points="28,76 60,76 40,120" style="fill:var(--c2,#0039FF)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+<div class="top"><span class="eyebrow">Sizebay · Grupo Audaces · Kickoff 2027</span><span class="eyebrow">Identidade visual · Proposta v1</span></div>
+
+<!-- HERO -->
+<header class="hero">
+  <div>
+    <div class="lockup" role="img" aria-label="Together we fit">
+      <svg class="mk" viewBox="0 0 100 100"><use href="#mark" width="100" height="100"/></svg>
+      <span class="tx"><span>Together</span><span><i>we</i>fit</span></span>
+    </div>
+    <p class="motto">Alone we fit well. Together, we fit perfectly.</p>
+    <p class="pt">Sozinhos encaixamos bem. Juntos, encaixamos perfeitamente. Cada time e cada empresa do grupo Audaces é uma peça que já funciona sozinha. O encaixe perfeito só existe quando as peças estão juntas.</p>
+    <div class="tags"><span class="chip">Fashion editorial</span><span class="chip">Formas recortadas</span><span class="chip">Papel + origami</span><span class="chip">Everybody fits</span></div>
+  </div>
+  <svg class="kv" viewBox="0 0 640 560" role="img" aria-label="Key visual com figuras geométricas e formas de papel recortado">
+    <rect width="640" height="560" fill="#EBE6D3"/>
+    <g filter="url(#paper)">
+      <polygon points="40,110 350,52 386,430 62,478" fill="#0039FF"/>
+      <circle cx="486" cy="168" r="112" fill="#FF3B2E"/>
+      <path d="M640 560H400A240 240 0 0 1 640 320Z" fill="#6FA3FF"/>
+      <polygon points="340,38 470,38 340,168" fill="#D9E73F"/>
+      <polygon points="0,380 120,560 0,560" fill="#0B0B0B"/>
+      <rect x="30" y="500" width="580" height="36" fill="#F6F3E8"/>
+    </g>
+    <use href="#figA" x="56" y="124" width="160" height="400"/>
+    <use href="#figB" x="214" y="104" width="172" height="430" style="--c1:#FF3B2E;--c2:#D9E73F"/>
+    <use href="#figC" x="382" y="130" width="160" height="400" style="--c3:#F6F3E8"/>
+    <use href="#mark" x="538" y="22" width="76" height="76" style="--a:#0B0B0B"/>
+    <text x="28" y="40" font-family="Instrument Sans,sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#0B0B0B">KICKOFF 2027</text>
+    <text x="28" y="56" font-family="Instrument Sans,sans-serif" font-size="11" letter-spacing="2" fill="#0B0B0B">SIZEBAY + AUDACES</text>
+  </svg>
+</header>
+
+<!-- CONCEPT -->
+<section>
+  <div class="sh">
+    <div><div class="eyebrow">Conceito</div><h2>Peças que se encaixam</h2></div>
+    <p>O símbolo parte do DNA da Sizebay, “everybody fits”, e leva o fit do produto para o grupo. Cinco formas geométricas simples, cada uma completa sozinha. Soltas, elas funcionam. Quando encaixam, formam um quadrado inteiro sem perder a própria forma.</p>
+  </div>
+  <div class="board ivory">
+    <svg viewBox="0 0 960 230" role="img" aria-label="Cinco peças soltas à esquerda e o símbolo encaixado à direita">
+      <g transform="translate(26 40) rotate(-14 31 31) scale(.62)"><use href="#pA"/></g>
+      <g transform="translate(120 4) rotate(12 31 31) scale(.62)"><use href="#pB"/></g>
+      <g transform="translate(212 74) rotate(-8 31 31) scale(.62)"><use href="#pC"/></g>
+      <g transform="translate(70 116) rotate(20 31 31) scale(.62)"><use href="#pD"/></g>
+      <g transform="translate(176 140) rotate(-18 31 31) scale(.62)"><use href="#pE"/></g>
+      <path d="M340 115H540" stroke="#0B0B0B" stroke-width="3" fill="none"/>
+      <polygon points="540,102 566,115 540,128" fill="#0B0B0B"/>
+      <use href="#mark" x="640" y="20" width="190" height="190"/>
+      <text x="26" y="222" font-family="Instrument Serif,serif" font-style="italic" font-size="26" fill="#0B0B0B">Alone we fit well.</text>
+      <text x="610" y="222" font-family="Instrument Serif,serif" font-style="italic" font-size="26" fill="#0039FF">Together, we fit perfectly.</text>
+    </svg>
+  </div>
+</section>
+
+<!-- LOGO -->
+<section>
+  <div class="sh">
+    <div><div class="eyebrow">Logotipo</div><h2>Together<br>we fit</h2></div>
+    <p>O nome aparece em duas vozes: “Together” em grotesca compacta e pesada, e “we” em serifa itálica, como um destaque de revista. O “fit” volta para a grotesca e fecha a frase. O símbolo pode ir sozinho em brindes pequenos.</p>
+  </div>
+  <div class="grid g2">
+    <div class="tile t-ivory"><div class="lockup" style="--fs:54px"><svg class="mk" viewBox="0 0 100 100"><use href="#mark" width="100" height="100"/></svg><span class="tx"><span>Together</span><span><i>we</i>fit</span></span></div></div>
+    <div class="tile t-blue"><div class="lockup" style="--fs:54px"><svg class="mk" viewBox="0 0 100 100"><use href="#mark" width="100" height="100"/></svg><span class="tx"><span>Together</span><span><i>we</i>fit</span></span></div></div>
+  </div>
+  <div class="grid g3" style="margin-top:20px">
+    <div class="tile t-ivory"><div class="lockup h" style="--fs:34px"><svg class="mk" viewBox="0 0 100 100"><use href="#mark" width="100" height="100"/></svg><span class="tx"><span>Together</span><span><i>we</i>fit</span></span></div></div>
+    <div class="tile t-ink"><div class="lockup v" style="--fs:40px"><svg class="mk" viewBox="0 0 100 100" style="width:2.2em;height:2.2em"><use href="#mark" width="100" height="100"/></svg><span class="tx"><span>Together</span><span><i>we</i>fit</span></span></div></div>
+    <div class="tile t-citron"><div class="lockup" style="--fs:40px"><svg class="mk" viewBox="0 0 100 100"><use href="#mark" width="100" height="100"/></svg><span class="tx"><span>Together</span><span><i>we</i>fit</span></span></div></div>
+  </div>
+  <div class="grid g4" style="margin-top:20px">
+    <div class="tile t-ivory" style="min-height:150px"><svg viewBox="0 0 100 100" width="96"><use href="#mark" width="100" height="100"/></svg></div>
+    <div class="tile t-red" style="min-height:150px"><svg viewBox="0 0 100 100" width="96"><use href="#mark" width="100" height="100"/></svg></div>
+    <div class="tile t-mono" style="min-height:150px"><svg viewBox="0 0 100 100" width="96"><use href="#mark" width="100" height="100"/></svg></div>
+    <div class="tile t-ink" style="min-height:150px;--a:#F6F3E8;--b:#F6F3E8;--c:#F6F3E8;--d:#F6F3E8;--e:#F6F3E8"><svg viewBox="0 0 100 100" width="96"><use href="#mark" width="100" height="100"/></svg></div>
+  </div>
+  <p class="cap">Horizontal · vertical · símbolo · positivo, negativo e monocromático</p>
+</section>
+
+<!-- PALETTE + TYPE -->
+<section>
+  <div class="sh">
+    <div><div class="eyebrow">Cor e tipografia</div><h2>Vibrante, divertida, editorial</h2></div>
+    <p>Mantive as cores que o time aprovou: azul, vermelho e amarelo, com marfim de papel e preto de tinta. Sem linhas paralelas. A textura de papel fica por cima das formas.</p>
+  </div>
+  <div class="pal">
+    <div class="sw" style="background:var(--blue);color:var(--ivory)"><b>Fit Blue</b>#0039FF</div>
+    <div class="sw" style="background:var(--woven)"><b>Woven Blue</b>#6FA3FF</div>
+    <div class="sw" style="background:var(--red)"><b>Vermilion</b>#FF3B2E</div>
+    <div class="sw" style="background:var(--citron)"><b>Citron</b>#D9E73F</div>
+    <div class="sw" style="background:var(--ink);color:var(--ivory)"><b>Ink</b>#0B0B0B</div>
+    <div class="sw" style="background:var(--ivory)"><b>Ivory</b>#F6F3E8</div>
+  </div>
+  <div class="type">
+    <div><div class="eyebrow">Display</div><p class="big" style="font-family:var(--display);font-weight:800;letter-spacing:-.04em;font-variation-settings:'wdth' 88">Aa Together</p><small>Bricolage Grotesque ExtraBold. Títulos e logotipo.</small></div>
+    <div><div class="eyebrow">Destaque editorial</div><p class="big" style="font-family:var(--serif);font-style:italic">Aa we fit</p><small>Instrument Serif Italic. Frases, citações e o “we”.</small></div>
+    <div><div class="eyebrow">Texto</div><p class="big" style="font-family:var(--text);font-weight:500;font-size:48px">Aa Everybody fits</p><small>Instrument Sans. Legendas, programação e textos corridos.</small></div>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section class="apps">
+  <div class="sh">
+    <div><div class="eyebrow">Aplicações</div><h2>Camiseta</h2></div>
+    <p>Três versões para o kit: marfim com símbolo, azul com versão vazada em marfim e preta com a frase nas costas.</p>
+  </div>
+  <div class="grid g3">
+    <div class="board">
+      <svg viewBox="0 0 320 340" role="img" aria-label="Camiseta marfim">
+        <ellipse cx="160" cy="328" rx="120" ry="8" fill="#000" opacity=".12"/>
+        <use href="#shirtP" fill="#F6F3E8"/><use href="#shirtP" fill="url(#shade)"/>
+        <path d="M110 24Q160 62 210 24" fill="none" stroke="#0B0B0B" stroke-width="6" opacity=".85"/>
+        <use href="#mark" x="112" y="104" width="96" height="96"/>
+        <text x="160" y="236" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="30" letter-spacing="-1.2" fill="#0B0B0B">Together <tspan font-family="Instrument Serif,serif" font-style="italic" font-weight="400" font-size="32">we</tspan> fit</text>
+        <text x="160" y="258" text-anchor="middle" font-family="Instrument Sans,sans-serif" font-size="9" letter-spacing="2.4" fill="#0B0B0B">KICKOFF 2027</text>
+      </svg>
+      <p class="cap">Frente · marfim</p>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 320 340" role="img" aria-label="Camiseta azul">
+        <ellipse cx="160" cy="328" rx="120" ry="8" fill="#000" opacity=".12"/>
+        <use href="#shirtP" fill="#0039FF"/><use href="#shirtP" fill="url(#shade)"/>
+        <path d="M110 24Q160 62 210 24" fill="none" stroke="#F6F3E8" stroke-width="6"/>
+        <g style="--a:#F6F3E8;--e:#9DBBFF"><use href="#mark" x="86" y="92" width="148" height="148"/></g>
+        <text x="160" y="268" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="26" letter-spacing="-1" fill="#F6F3E8">Together <tspan font-family="Instrument Serif,serif" font-style="italic" font-weight="400" font-size="28">we</tspan> fit</text>
+        <g style="--a:#F6F3E8;--e:#9DBBFF"><use href="#mark" x="268" y="86" width="22" height="22" transform="rotate(-12 279 97)"/></g>
+      </svg>
+      <p class="cap">Frente · azul, versão vazada</p>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 320 340" role="img" aria-label="Camiseta preta, costas">
+        <ellipse cx="160" cy="328" rx="120" ry="8" fill="#000" opacity=".12"/>
+        <use href="#shirtP" fill="#0B0B0B"/><use href="#shirtP" fill="url(#shade)"/>
+        <path d="M110 24Q160 34 210 24" fill="none" stroke="#2a2a2a" stroke-width="6"/>
+        <g style="--a:#4D7CFF;--c:#F6F3E8"><use href="#mark" x="136" y="58" width="48" height="48"/></g>
+        <text x="160" y="160" text-anchor="middle" font-family="Instrument Serif,serif" font-style="italic" font-size="30" fill="#F6F3E8">Alone we fit well.</text>
+        <text x="160" y="198" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="30" letter-spacing="-1.2" fill="#D9E73F">Together, we fit</text>
+        <text x="160" y="232" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="30" letter-spacing="-1.2" fill="#D9E73F">perfectly.</text>
+      </svg>
+      <p class="cap">Costas · preta</p>
+    </div>
+  </div>
+</section>
+
+<section class="apps">
+  <div class="sh">
+    <div><div class="eyebrow">Aplicações</div><h2>Copo térmico</h2></div>
+    <p>O copo usa o símbolo repetido como estampa corrida, em três combinações de cor.</p>
+  </div>
+  <div class="grid g3">
+    <div class="board" style="max-width:100%">
+      <svg viewBox="0 0 200 340" style="max-height:420px;margin:0 auto" role="img" aria-label="Copo marfim">
+        <ellipse cx="100" cy="332" rx="62" ry="6" fill="#000" opacity=".14"/>
+        <rect x="36" y="14" width="128" height="30" rx="8" fill="#0B0B0B"/><rect x="82" y="6" width="36" height="10" rx="4" fill="#0B0B0B"/>
+        <use href="#cupP" fill="#F6F3E8"/>
+        <g clip-path="url(#cupClip)">
+          <use href="#mark" x="68" y="70" width="64" height="64"/>
+          <text x="100" y="174" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="27" letter-spacing="-1.1" fill="#0B0B0B">Together</text>
+          <text x="100" y="202" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="27" letter-spacing="-1.1" fill="#0B0B0B"><tspan font-family="Instrument Serif,serif" font-style="italic" font-weight="400" font-size="29">we</tspan> fit</text>
+          <use href="#mark" x="12" y="250" width="56" height="56"/><use href="#mark" x="72" y="250" width="56" height="56"/><use href="#mark" x="132" y="250" width="56" height="56"/>
+        </g>
+        <use href="#cupP" fill="url(#shade)"/>
+      </svg>
+      <p class="cap">Marfim</p>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 200 340" style="max-height:420px;margin:0 auto" role="img" aria-label="Copo azul com estampa">
+        <ellipse cx="100" cy="332" rx="62" ry="6" fill="#000" opacity=".14"/>
+        <rect x="36" y="14" width="128" height="30" rx="8" fill="#F6F3E8" stroke="#0B0B0B" stroke-width="2"/><rect x="82" y="6" width="36" height="10" rx="4" fill="#F6F3E8" stroke="#0B0B0B" stroke-width="2"/>
+        <use href="#cupP" fill="#0039FF"/>
+        <g clip-path="url(#cupClip)" style="--a:#F6F3E8;--e:#9DBBFF">
+          <use href="#mark" x="36" y="44" width="60" height="60"/><use href="#mark" x="100" y="44" width="60" height="60" transform="rotate(90 130 74)"/>
+          <use href="#mark" x="36" y="108" width="60" height="60" transform="rotate(180 66 138)"/><use href="#mark" x="100" y="108" width="60" height="60" transform="rotate(270 130 138)"/>
+          <use href="#mark" x="36" y="172" width="60" height="60"/><use href="#mark" x="100" y="172" width="60" height="60" transform="rotate(90 130 202)"/>
+          <use href="#mark" x="36" y="236" width="60" height="60" transform="rotate(180 66 266)"/><use href="#mark" x="100" y="236" width="60" height="60" transform="rotate(270 130 266)"/>
+        </g>
+        <use href="#cupP" fill="url(#shade)"/>
+      </svg>
+      <p class="cap">Azul · estampa corrida</p>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 200 340" style="max-height:420px;margin:0 auto" role="img" aria-label="Copo preto e amarelo">
+        <ellipse cx="100" cy="332" rx="62" ry="6" fill="#000" opacity=".14"/>
+        <rect x="36" y="14" width="128" height="30" rx="8" fill="#D9E73F"/><rect x="82" y="6" width="36" height="10" rx="4" fill="#D9E73F"/>
+        <use href="#cupP" fill="#0B0B0B"/>
+        <g clip-path="url(#cupClip)">
+          <path d="M42 230H158V330H42Z" fill="#FF3B2E"/>
+          <g style="--a:#4D7CFF;--c:#F6F3E8"><use href="#mark" x="54" y="64" width="92" height="92"/></g>
+          <text x="100" y="196" text-anchor="middle" font-family="Instrument Serif,serif" font-style="italic" font-size="22" fill="#F6F3E8">Alone we fit well.</text>
+          <text x="100" y="262" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="22" letter-spacing="-.8" fill="#0B0B0B">Together,</text>
+          <text x="100" y="286" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="22" letter-spacing="-.8" fill="#0B0B0B">we fit perfectly.</text>
+        </g>
+        <use href="#cupP" fill="url(#shade)"/>
+      </svg>
+      <p class="cap">Preto · frase do conceito</p>
+    </div>
+  </div>
+</section>
+
+<section class="apps">
+  <div class="sh">
+    <div><div class="eyebrow">Aplicações</div><h2>Backdrop do evento</h2></div>
+    <p>Palco principal com a parede em papel marfim, formas grandes recortadas e figuras geométricas em escala humana. Na versão final, as figuras viram fotos de modelos sorrindo, recortadas sobre as mesmas formas.</p>
+  </div>
+  <div class="board" style="padding:0;background:#0a0a0d">
+    <svg viewBox="0 0 960 540" role="img" aria-label="Backdrop do palco principal">
+      <rect width="960" height="540" fill="#101016"/>
+      <rect y="0" width="960" height="44" fill="#050507"/>
+      <g fill="#fff"><circle cx="90" cy="30" r="4"/><circle cx="250" cy="30" r="4"/><circle cx="410" cy="30" r="4"/><circle cx="570" cy="30" r="4"/><circle cx="730" cy="30" r="4"/><circle cx="880" cy="30" r="4"/></g>
+      <polygon points="90,34 40,440 170,440" fill="#6FA3FF" opacity=".12"/><polygon points="730,34 680,440 820,440" fill="#6FA3FF" opacity=".12"/>
+      <rect x="40" y="60" width="880" height="380" fill="#F6F3E8" filter="url(#paper)"/>
+      <g filter="url(#paper)">
+        <path d="M920 440H560A360 360 0 0 1 920 80Z" fill="#0039FF"/>
+        <circle cx="640" cy="150" r="72" fill="#D9E73F"/>
+        <polygon points="40,60 128,60 40,148" fill="#FF3B2E"/>
+        <polygon points="40,440 40,380 100,440" fill="#0B0B0B"/>
+      </g>
+      <use href="#mark" x="76" y="124" width="118" height="118"/>
+      <text x="72" y="318" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="104" letter-spacing="-5" fill="#0B0B0B">Together</text>
+      <text x="72" y="406" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="104" letter-spacing="-5" fill="#0B0B0B"><tspan font-family="Instrument Serif,serif" font-style="italic" font-weight="400" letter-spacing="-1">we</tspan> fit</text>
+      <text x="330" y="404" font-family="Instrument Sans,sans-serif" font-size="14" font-weight="600" letter-spacing="3" fill="#0B0B0B">KICKOFF 2027 · GRUPO AUDACES</text>
+      <rect y="440" width="960" height="100" fill="url(#floor)"/>
+      <rect y="440" width="960" height="3" fill="#6FA3FF" opacity=".5"/>
+      <use href="#figB" x="540" y="150" width="140" height="350" style="--c1:#FF3B2E;--c2:#D9E73F"/>
+      <use href="#figA" x="670" y="125" width="150" height="375"/>
+      <use href="#figC" x="800" y="175" width="125" height="312" style="--c3:#F6F3E8"/>
+      <g fill="#050507"><ellipse cx="60" cy="548" rx="46" ry="26"/><ellipse cx="170" cy="552" rx="40" ry="24"/><ellipse cx="290" cy="546" rx="48" ry="28"/><ellipse cx="420" cy="552" rx="42" ry="24"/><ellipse cx="540" cy="548" rx="46" ry="26"/><ellipse cx="660" cy="552" rx="42" ry="24"/><ellipse cx="790" cy="546" rx="48" ry="28"/><ellipse cx="910" cy="552" rx="40" ry="24"/></g>
+    </svg>
+  </div>
+  <p class="cap">Palco principal · 16:9</p>
+</section>
+
+<section class="apps">
+  <div class="sh">
+    <div><div class="eyebrow">Aplicações</div><h2>Slides</h2></div>
+    <p>Três páginas-modelo: abertura, frase do conceito e pauta. O papel recortado entra como moldura, e o texto mantém contraste alto.</p>
+  </div>
+  <div class="grid g3">
+    <div>
+      <svg viewBox="0 0 640 360" role="img" aria-label="Slide de abertura" style="box-shadow:0 14px 28px rgba(11,11,11,.18)">
+        <rect width="640" height="360" fill="#0039FF"/>
+        <g filter="url(#paper)">
+          <path d="M640 360H340A300 300 0 0 1 640 60Z" fill="#F6F3E8"/>
+          <circle cx="560" cy="86" r="52" fill="#FF3B2E"/>
+          <polygon points="0,360 0,250 110,360" fill="#D9E73F"/>
+        </g>
+        <g style="--a:#F6F3E8;--e:#9DBBFF"><use href="#mark" x="36" y="32" width="56" height="56"/></g>
+        <text x="36" y="196" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="82" letter-spacing="-4" fill="#F6F3E8">Together</text>
+        <text x="36" y="274" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="82" letter-spacing="-4" fill="#F6F3E8"><tspan font-family="Instrument Serif,serif" font-style="italic" font-weight="400" letter-spacing="-1">we</tspan> fit</text>
+        <text x="36" y="326" font-family="Instrument Sans,sans-serif" font-size="12" font-weight="600" letter-spacing="2.5" fill="#F6F3E8">KICKOFF 2027 · SIZEBAY + AUDACES</text>
+      </svg>
+      <p class="cap">Abertura</p>
+    </div>
+    <div>
+      <svg viewBox="0 0 640 360" role="img" aria-label="Slide da frase do conceito" style="box-shadow:0 14px 28px rgba(11,11,11,.18)">
+        <rect width="640" height="360" fill="#F6F3E8"/>
+        <text x="36" y="40" font-family="Instrument Sans,sans-serif" font-size="12" font-weight="600" letter-spacing="2.5" fill="#0B0B0B">O CONCEITO</text>
+        <text x="36" y="150" font-family="Instrument Serif,serif" font-style="italic" font-size="50" fill="#0B0B0B">Alone we fit well.</text>
+        <text x="36" y="220" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="50" letter-spacing="-2" fill="#0039FF">Together, we fit</text>
+        <text x="36" y="274" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="50" letter-spacing="-2" fill="#0039FF">perfectly.</text>
+        <use href="#mark" x="470" y="30" width="140" height="140"/>
+        <text x="36" y="332" font-family="Instrument Sans,sans-serif" font-size="12" fill="#5b584d">Sozinhos encaixamos bem. Juntos, encaixamos perfeitamente.</text>
+      </svg>
+      <p class="cap">Frase</p>
+    </div>
+    <div>
+      <svg viewBox="0 0 640 360" role="img" aria-label="Slide de pauta" style="box-shadow:0 14px 28px rgba(11,11,11,.18)">
+        <rect width="640" height="360" fill="#0B0B0B"/>
+        <g filter="url(#paper)"><polygon points="640,0 640,360 470,360" fill="#FF3B2E"/><circle cx="560" cy="70" r="46" fill="#D9E73F"/></g>
+        <use href="#figC" x="500" y="96" width="104" height="260" style="--c1:#0039FF;--c2:#F6F3E8;--c3:#F6F3E8"/>
+        <text x="36" y="72" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="52" letter-spacing="-2" fill="#F6F3E8">Pauta</text>
+        <g style="--a:#4D7CFF;--c:#F6F3E8">
+          <use href="#pA" transform="translate(36 112) scale(.4)"/><use href="#pD" transform="translate(36 176) scale(.4)"/><use href="#pE" transform="translate(36 240) scale(.4)"/>
+        </g>
+        <text x="86" y="140" font-family="Bricolage Grotesque,sans-serif" font-weight="700" font-size="24" fill="#F6F3E8">A Sizebay hoje</text>
+        <text x="86" y="204" font-family="Bricolage Grotesque,sans-serif" font-weight="700" font-size="24" fill="#F6F3E8">O grupo Audaces</text>
+        <text x="86" y="268" font-family="Bricolage Grotesque,sans-serif" font-weight="700" font-size="24" fill="#F6F3E8">Como encaixamos em 2027</text>
+      </svg>
+      <p class="cap">Pauta</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECONDARY ELEMENTS -->
+<section>
+  <div class="sh">
+    <div><div class="eyebrow">Elementos secundários</div><h2>Armarinho de moda</h2></div>
+    <p>Objetos do ateliê desenhados com as mesmas formas e cores do símbolo. Servem como adesivos, ícones de programação, estampas e sinalização. Cada um é uma peça que encaixa na composição.</p>
+  </div>
+  <div class="grid g6" id="items">
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Botão"><circle cx="60" cy="60" r="44" fill="#0039FF"/><circle cx="60" cy="60" r="34" fill="none" stroke="#F6F3E8" stroke-width="3"/><circle cx="50" cy="50" r="4.5" fill="#F6F3E8"/><circle cx="70" cy="50" r="4.5" fill="#F6F3E8"/><circle cx="50" cy="70" r="4.5" fill="#F6F3E8"/><circle cx="70" cy="70" r="4.5" fill="#F6F3E8"/><path d="M50 50L70 70M70 50L50 70" stroke="#FF3B2E" stroke-width="3" stroke-linecap="round"/></svg><p class="cap">Botão</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Zíper"><rect x="40" y="6" width="40" height="108" fill="#0B0B0B"/><g fill="#D9E73F"><rect x="48" y="12" width="12" height="7"/><rect x="48" y="30" width="12" height="7"/><rect x="48" y="48" width="12" height="7"/><rect x="48" y="66" width="12" height="7"/><rect x="48" y="84" width="12" height="7"/></g><g fill="#F6F3E8"><rect x="60" y="21" width="12" height="7"/><rect x="60" y="39" width="12" height="7"/><rect x="60" y="57" width="12" height="7"/><rect x="60" y="75" width="12" height="7"/><rect x="60" y="93" width="12" height="7"/></g><rect x="46" y="98" width="28" height="14" rx="3" fill="#FF3B2E"/><path d="M60 112 L60 120" stroke="#FF3B2E" stroke-width="6"/></svg><p class="cap">Zíper</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Cabide"><path d="M60 52L108 92H12Z" fill="#D9E73F" stroke="#0B0B0B" stroke-width="5" stroke-linejoin="round"/><path d="M60 52V44C60 38 72 36 72 26C72 14 52 14 52 26" fill="none" stroke="#0B0B0B" stroke-width="5" stroke-linecap="round"/><circle cx="60" cy="74" r="8" fill="#0039FF"/></svg><p class="cap">Cabide</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Carretel de linha"><rect x="28" y="12" width="64" height="14" rx="3" fill="#0B0B0B"/><rect x="28" y="94" width="64" height="14" rx="3" fill="#0B0B0B"/><rect x="38" y="26" width="44" height="68" fill="#FF3B2E"/><polygon points="38,26 82,26 38,60" fill="#fff" opacity=".2"/><path d="M82 62C108 62 98 92 114 100" fill="none" stroke="#0039FF" stroke-width="4" stroke-linecap="round"/></svg><p class="cap">Carretel</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Agulha e linha"><path d="M40 28C14 36 18 74 50 74C82 74 92 56 88 96" fill="none" stroke="#FF3B2E" stroke-width="4" stroke-linecap="round"/><g transform="rotate(38 60 60)"><rect x="56" y="4" width="8" height="112" rx="4" fill="#0B0B0B"/><ellipse cx="60" cy="18" rx="2.5" ry="9" fill="#F6F3E8"/></g></svg><p class="cap">Agulha e linha</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Fita métrica"><circle cx="58" cy="58" r="46" fill="#D9E73F"/><circle cx="58" cy="58" r="41" fill="none" stroke="#0B0B0B" stroke-width="6" stroke-dasharray="1.6 8.4"/><circle cx="58" cy="58" r="16" fill="#0B0B0B"/><circle cx="58" cy="58" r="5" fill="#F6F3E8"/><rect x="58" y="100" width="58" height="14" fill="#D9E73F"/><path d="M62 112H114" stroke="#0B0B0B" stroke-width="6" stroke-dasharray="1.6 8.4"/></svg><p class="cap">Fita métrica</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Etiqueta de tamanho"><g transform="rotate(-12 60 60)"><path d="M30 14H90V96L60 112L30 96Z" fill="#F6F3E8" stroke="#0B0B0B" stroke-width="3" stroke-linejoin="round"/><circle cx="60" cy="28" r="5" fill="#EBE6D3" stroke="#0B0B0B" stroke-width="2"/><text x="60" y="76" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="38" fill="#0039FF">M</text><text x="60" y="94" text-anchor="middle" font-family="Instrument Sans,sans-serif" font-weight="600" font-size="7" letter-spacing="1.2" fill="#0B0B0B">EVERYBODY</text></g></svg><p class="cap">Etiqueta de tamanho</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Tesoura"><path d="M42 84L84 12M78 84L36 12" stroke="#0B0B0B" stroke-width="7" stroke-linecap="round"/><circle cx="38" cy="98" r="13" fill="none" stroke="#FF3B2E" stroke-width="7"/><circle cx="82" cy="98" r="13" fill="none" stroke="#0039FF" stroke-width="7"/><circle cx="60" cy="48" r="4.5" fill="#F6F3E8"/></svg><p class="cap">Tesoura</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Molde de costura"><polygon points="30,12 90,12 102,42 90,108 30,108 18,42" fill="#F6F3E8" stroke="#0B0B0B" stroke-width="2.5" stroke-dasharray="5 4" stroke-linejoin="round"/><path d="M60 34V86" stroke="#FF3B2E" stroke-width="2.5"/><polygon points="60,28 55,38 65,38" fill="#FF3B2E"/><polygon points="60,92 55,82 65,82" fill="#FF3B2E"/><polygon points="18,42 26,38 26,46" fill="#0B0B0B"/><polygon points="102,42 94,38 94,46" fill="#0B0B0B"/><text x="60" y="102" text-anchor="middle" font-family="Instrument Sans,sans-serif" font-weight="600" font-size="7" letter-spacing="1" fill="#0B0B0B">FIT ×2</text></svg><p class="cap">Molde</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Alfinete"><path d="M26 96L82 40" stroke="#0B0B0B" stroke-width="4" stroke-linecap="round"/><circle cx="90" cy="32" r="14" fill="#FF3B2E"/><polygon points="90,18 104,32 90,46 94,32" fill="#fff" opacity=".22"/></svg><p class="cap">Alfinete</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Manequim"><circle cx="60" cy="16" r="7" fill="#0B0B0B"/><path d="M42 30Q60 22 78 30L84 58Q86 78 72 90H48Q34 78 36 58Z" fill="#0039FF"/><polygon points="60,26 78,30 84,58 86,70 60,90" fill="#fff" opacity=".18"/><path d="M60 90V110" stroke="#0B0B0B" stroke-width="4"/><polygon points="40,116 80,116 72,108 48,108" fill="#0B0B0B"/></svg><p class="cap">Manequim</p></div>
+    <div class="board"><svg viewBox="0 0 120 120" role="img" aria-label="Pesponto"><path d="M10 86C40 18 80 104 110 36" fill="none" stroke="#0039FF" stroke-width="5" stroke-dasharray="9 7" stroke-linecap="round"/><circle cx="10" cy="86" r="6" fill="#FF3B2E"/><circle cx="110" cy="36" r="6" fill="#D9E73F" stroke="#0B0B0B" stroke-width="2"/></svg><p class="cap">Pesponto</p></div>
+  </div>
+
+  <div class="grid g2" style="margin-top:20px">
+    <div class="board">
+      <svg viewBox="0 0 600 340" role="img" aria-label="Corpos geométricos">
+        <rect width="600" height="340" fill="#F6F3E8"/>
+        <g filter="url(#paper)"><circle cx="300" cy="150" r="120" fill="#FF3B2E"/><polygon points="40,340 40,120 220,340" fill="#0039FF"/><polygon points="600,340 600,90 430,340" fill="#D9E73F"/></g>
+        <use href="#figA" x="60" y="20" width="128" height="320"/>
+        <use href="#figB" x="236" y="10" width="128" height="320" style="--c1:#0B0B0B;--c2:#F6F3E8"/>
+        <use href="#figC" x="412" y="20" width="128" height="320" style="--c1:#0039FF;--c2:#FF3B2E;--c3:#0B0B0B"/>
+      </svg>
+      <p class="cap">Corpos geométricos · base para recortes com fotos</p>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 600 340" role="img" aria-label="Estampa de peças">
+        <rect width="600" height="340" fill="#0039FF"/>
+        <g style="--a:#F6F3E8;--e:#9DBBFF">
+          <use href="#mark" x="0" y="0" width="85" height="85"/><use href="#mark" x="100" y="0" width="85" height="85" transform="rotate(90 142.5 42.5)"/><use href="#mark" x="200" y="0" width="85" height="85"/><use href="#mark" x="300" y="0" width="85" height="85" transform="rotate(90 342.5 42.5)"/><use href="#mark" x="400" y="0" width="85" height="85"/><use href="#mark" x="500" y="0" width="85" height="85" transform="rotate(90 542.5 42.5)"/>
+          <use href="#mark" x="50" y="100" width="85" height="85" transform="rotate(180 92.5 142.5)"/><use href="#mark" x="150" y="100" width="85" height="85" transform="rotate(270 192.5 142.5)"/><use href="#mark" x="250" y="100" width="85" height="85" transform="rotate(180 292.5 142.5)"/><use href="#mark" x="350" y="100" width="85" height="85" transform="rotate(270 392.5 142.5)"/><use href="#mark" x="450" y="100" width="85" height="85" transform="rotate(180 492.5 142.5)"/>
+          <use href="#mark" x="0" y="200" width="85" height="85"/><use href="#mark" x="100" y="200" width="85" height="85" transform="rotate(90 142.5 242.5)"/><use href="#mark" x="200" y="200" width="85" height="85"/><use href="#mark" x="300" y="200" width="85" height="85" transform="rotate(90 342.5 242.5)"/><use href="#mark" x="400" y="200" width="85" height="85"/><use href="#mark" x="500" y="200" width="85" height="85" transform="rotate(90 542.5 242.5)"/>
+        </g>
+      </svg>
+      <p class="cap">Estampa · símbolo girado em 90°</p>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTION -->
+<section>
+  <div class="sh">
+    <div><div class="eyebrow">Direção</div><h2>O que guiou esta versão</h2></div>
+    <p>Esta é uma primeira leitura para você reagir. Tudo está desenhado em vetor, então qualquer peça pode ser ajustada rápido.</p>
+  </div>
+  <div class="notes">
+    <div><h3>Encaixe como ideia</h3><p>Formas básicas (quarto de círculo, triângulo, círculo) que se completam em um quadrado. Sozinhas já têm graça, juntas fecham.</p></div>
+    <div><h3>Sem linhas paralelas</h3><p>Seguindo o retorno recebido, a identidade trabalha com formas sólidas e recortes. As únicas linhas aparecem como detalhe de costura, em objetos como o pesponto.</p></div>
+    <div><h3>Papel, recorte e origami</h3><p>Textura de papel sobre as formas, e roupas construídas por facetas geométricas, como dobras. Os corpos são feitos de formas, como na sua exploração.</p></div>
+  </div>
+  <div class="next">
+    <h3>Próximos passos sugeridos</h3>
+    <ul>
+      <li>Trocar os corpos geométricos por fotos de modelos sorrindo, recortadas sobre as formas.</li>
+      <li>Testar variações do símbolo: uma peça por empresa do grupo Audaces.</li>
+      <li>Definir o conjunto final de adesivos e o kit de redes sociais.</li>
+      <li>Animar o encaixe das peças para a abertura do evento.</li>
+    </ul>
+  </div>
+</section>
+
+<footer><span>Together We Fit · Sizebay · Kickoff 2027</span><span>Proposta de identidade visual v1</span></footer>
+</div>
